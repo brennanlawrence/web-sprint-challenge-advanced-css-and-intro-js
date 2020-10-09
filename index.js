@@ -239,12 +239,13 @@ Create a function called get20s() that takes data as an argument and returns an 
 function get20s(array){
   let newArray = [];
   for(let i = 0; i < array.length; i++){
-    if(array[i]["years"] === "1904 - 1989" || array[i].years === "1907 - 1954"){
+    if(array[i].years.substring(4,0) >= 1900 && array[i].years.substring(7) <= 2000) {
       newArray.push(array[i].name);
     }
   }
   return newArray;
 }
+console.log(get20s(artists));
 
 
 
